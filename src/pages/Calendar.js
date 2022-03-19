@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase-config';
 import { getFirestore } from '@firebase/firestore';
-import { collection, addDoc, getDocs, orderBy, limit, query, updateDoc,doc } from '@firebase/firestore';
+import { collection, addDoc, getDocs, getDoc , orderBy, limit, query, updateDoc,doc } from '@firebase/firestore';
 
 import { useFirestoreQuery } from '../hooks/firebase-hooks';
 import Day from '../UI/Day';
@@ -26,15 +26,29 @@ const Calendar = () => {
     const q = query(calendarRef,orderBy("Dan", "asc")); 
 
     const days = useFirestoreQuery(q); 
-    console.log(days);
+   
 
 
 
     const removeWorker = async (id) =>{ 
                                                 
-         const docID = doc(db,"Mart",id); 
-         console(docID); 
-         await updateDoc(docID,{Radnik_1: null}); 
+         const docRef = doc(db,"Mart",id); 
+         
+         
+       const document =  await getDoc(docRef); 
+       console.log(document.data().Radnik_1); 
+       if( document.data().Radnik_1!=null && document.data().R1_email == User.email ){
+
+        await updateDoc(docRef,{Radnik_1: null}); 
+    }
+    if( document.data().Radnik_2!=null && document.data().R2_email == User.email ){
+
+        await updateDoc(docRef,{Radnik_2: null}); 
+    }
+    if( document.data().Radnik_3!=null && document.data().R3_email == User.email ){
+
+        await updateDoc(docRef,{Radnik_3: null}); 
+    }
  
 
 
