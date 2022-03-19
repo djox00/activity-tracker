@@ -4,6 +4,7 @@ import GoogleButton from './GoogleButton';
 import { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase-config';
+
 const NavBar = ({login,logout}) => {
 
     const [User, setUser] = useState(''); 
@@ -26,7 +27,7 @@ const NavBar = ({login,logout}) => {
                         </div>
                         <nav className={styled.navigacija}>
                             <a href="login.html">Početna</a>
-                            <a href="kalendar.html">Kalendar</a>
+                            <a href="Calendar">Kalendar</a>
                             <a href="upit.html">Kontakt</a>
                            {User== null ?  <a className={styled.google}> <GoogleButton onClick={login}>Login with Google</GoogleButton>  </a> : <div onClick={logout} className={styled.logout}>Sign out</div> } 
                         </nav>
