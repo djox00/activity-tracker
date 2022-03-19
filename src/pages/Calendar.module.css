@@ -1,5 +1,16 @@
 .calendar-body{
-    height: 90vh;
+    min-height: 90vh;
     width: 100%;
     background-color: aquamarine;
+
+}
+.days{ 
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+
+}
+
+.day{
+    padding: 20px;
 }

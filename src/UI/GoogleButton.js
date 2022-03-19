@@ -20,7 +20,6 @@ transition: background-color .3s, box-shadow .3s;
   
   &:hover {
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
-    cursor: pointer; 
   }
   
   &:active {

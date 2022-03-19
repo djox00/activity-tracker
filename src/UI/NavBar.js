@@ -19,9 +19,7 @@ const NavBar = ({login,logout}) => {
                     <div className={styled.container}>
                         <div className={styled.naslovalign}>
                             <div className={styled.naslovanim}>
-                                <a href="login.html" className={styled.brothercrewclick}>
                                     <h1 className={styled.brother}>Brother</h1><h1 className={styled.crew}>Crew</h1>
-                                </a>
                             </div>
                             <h5 className={styled.brocrew}>Profesionalna rješenja za automatizaciju radnog mjesta</h5>
                         </div>
@@ -29,8 +27,9 @@ const NavBar = ({login,logout}) => {
                             <a href="login.html">Početna</a>
                             <a href="Calendar">Kalendar</a>
                             <a href="upit.html">Kontakt</a>
-                           {User== null ?  <a className={styled.google}> <GoogleButton onClick={login}>Login with Google</GoogleButton>  </a> : <div onClick={logout} className={styled.logout}>Sign out</div> } 
-                        </nav>
+                            </nav>
+                           {User== null ? <div className={styled.login}>   <GoogleButton onClick={login}>Login with Google</GoogleButton> </div> : <div onClick={logout} className={styled.logout}>Sign out</div> } 
+                       
                       
                     </div>
                 </header>
