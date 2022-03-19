@@ -2,9 +2,9 @@
     width: 200px;
     height: 200px;
     border-radius: 25px;
-    background-color: aqua;
-    box-shadow: 0 0 10px 13px rgba(0, 0, 0, 0.397);
-    
+    background-color: #FFD700;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.623);
+    transition: 0.3s;
     overflow: hidden;
 }
 .header{
@@ -15,4 +15,9 @@
     text-align: center;
     background-color: brown;
     color: white;
+
+}
+.card:hover{
+    transform: scale(1.1);
+
 }
