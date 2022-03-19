@@ -13,14 +13,21 @@ const Calendar = () => {
 
     const db = getFirestore(); 
     const calendarRef = collection(db,"Mart"); 
-    const q = query(calendarRef); 
+    const q = query(calendarRef,orderBy("Dan", "asc")); 
 
     const days = useFirestoreQuery(q); 
-    console.log(days["1."]);
+    console.log(days);
 
 
 
-let day =  days.map((data) => <Col  className={styled.day} lg={2} > <Day workers={data} /> </Col>)
+    const removeWorker = (id) =>{ 
+        console.log(id); 
+
+    }
+
+
+
+let day =  days.map(data => <Col key={data.id}  className={styled.day} lg={2} > <Day removeWorker={removeWorker} day={data} /> </Col>)
 
 
   return (
@@ -30,10 +37,10 @@ let day =  days.map((data) => <Col  className={styled.day} lg={2} > <Day workers
     
 <Container className={styled.days}>
 
-<Row  >
+<Row>
+
   {day}
   
-   
   </Row>
 
  
