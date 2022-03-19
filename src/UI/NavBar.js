@@ -1,7 +1,16 @@
 import React from 'react'
 import styled from './NavBar.module.css'; 
 import GoogleButton from './GoogleButton';
-const NavBar = () => {
+import { useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase-config';
+const NavBar = ({login,logout}) => {
+
+    const [User, setUser] = useState(''); 
+
+    onAuthStateChanged(auth,(currentuser)=>{setUser(currentuser)}); 
+
+
   return (
     <React.Fragment> 
 
@@ -19,7 +28,7 @@ const NavBar = () => {
                             <a href="login.html">Početna</a>
                             <a href="kalendar.html">Kalendar</a>
                             <a href="upit.html">Kontakt</a>
-                            <a> <GoogleButton>Login with Google</GoogleButton>  </a> 
+                           {User== null ?  <a className={styled.google}> <GoogleButton onClick={login}>Login with Google</GoogleButton>  </a> : <div onClick={logout} className={styled.logout}>Sign out</div> } 
                         </nav>
                       
                     </div>
