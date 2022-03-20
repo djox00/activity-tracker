@@ -18,38 +18,26 @@ const Day = ({ day, removeWorker }) => {
 
 
 
-
-
-    /* const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
-          .then((result) => { 
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-      }; */
-
-
 const cardClickHandler = () => { 
     removeWorker(day.id); 
 
-
-
-
-
+     const mailPeople = [ {person : day.R1_email} , {person : day.R2_email} , {person : day.R3_email}  ]; 
+     let mailTosend = mailPeople.filter(el => el.person != User.email); 
      
     send("service_80x83d6","template_ind8yi7",{
         worker_name: User.displayName,
         day: day.Dan + '.',
-        month: "Mart",
-        to_email: User.email != day.R1_email ? day.R1_email + ',' : ''  + User.email != day.R2_email ? day.R2_email + ',' : '' + User.email != day.R3_email ? day.R3_email  : '' ,
-
+        month: "Mart", // staticki ali ako se radi dalje napravi jos kolekcija npr. jan, feb, mart moze biti dinamicki 
+        to_email1: mailTosend[0].person,  
+        to_email2: mailTosend[1].person ,  
+        
         });
+
+    
+         
 }
- 
-      
+
+     
 
     return (
 

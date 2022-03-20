@@ -4,7 +4,7 @@
     height: 200px;
     border-radius: 25px;
     background-color: #cec6b9;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.623);
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.623);
     transition: 0.3s;
     overflow: hidden;
     font-family: 'Lato', sans-serif;

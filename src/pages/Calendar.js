@@ -31,7 +31,7 @@ const Calendar = () => {
 
     const days = useFirestoreQuery(q); 
    
-console.log(days); 
+
 
 /* const addmail = async () => {
 

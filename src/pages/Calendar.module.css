@@ -14,3 +14,20 @@
 .day{
     padding: 20px;
 }
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #383838a1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #353131;
+    border-radius: 20px;
+  
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #464236da;
+  }
