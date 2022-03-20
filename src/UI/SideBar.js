@@ -1,18 +1,12 @@
 import React from 'react'
 import styled from './SideBar.module.css'; 
 import { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, useTransition } from 'react-spring';
+import { useRef } from 'react';
+import Month from './Month'; 
 const SideBar = () => {
 
 const [Toggle, setToggle] = useState(false); 
-
-const props = useSpring({
-    to:{left: "0px"}
-   ,
-    from: { left: "-200px"},
-
-    config: { duration: 500 },
-  }); 
 
 
 
@@ -22,13 +16,27 @@ const props = useSpring({
   return (
    
 <React.Fragment> 
-    <animated.div style={props}>    
+     
 <div className={styled.sidebar}> 
-        
+<Month> Jan</Month>
+<Month> Feb</Month>
+<Month> Mart</Month>
+<Month> Apr</Month>
+<Month> Maj</Month>
+<Month> Jun</Month>
+<Month> Jul</Month>
+<Month> Aug</Month>
+<Month> Sep</Month>
+<Month> Okt</Month>
+<Month> Nov</Month>
+<Month> Dec</Month>
+
+
+
 
 
         </div>
-        </animated.div>
+      
     
          </React.Fragment>
      

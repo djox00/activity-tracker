@@ -1,0 +1,16 @@
+.month{
+    height: 50px;
+    width: 50px;
+   text-align: center;
+   background-color: brown;
+   color: white;
+   vertical-align: middle;
+   border: solid 1px rgb(184, 182, 182);
+   border-radius: 5px;
+}
+p{
+line-height: 50px;  
+}
+.month:hover{
+    cursor: pointer;
+}

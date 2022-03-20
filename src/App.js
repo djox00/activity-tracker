@@ -14,6 +14,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Calendar from './pages/Calendar';
+import Home from './pages/Home';
 
 
 
@@ -67,7 +68,7 @@ console.log(User);
  
    <Routes>
      
-       
+   <Route path="/Home" element={ <Home /> } />
         <Route path="/Calendar" element={ <Calendar /> } />
     
       </Routes>

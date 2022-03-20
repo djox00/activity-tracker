@@ -25,7 +25,7 @@ const NavBar = ({login,logout}) => {
   <Navbar.Collapse id="responsive-navbar-nav" c={true}>
     <Nav style={{marginLeft: "20px"}} >
         <div className={styled['nav-labels']}>
-      <Nav.Link href="features">Početna</Nav.Link>
+      <Nav.Link href="Home">Početna</Nav.Link>
       <Nav.Link href="Calendar">Kalendar</Nav.Link>
       </div>
     

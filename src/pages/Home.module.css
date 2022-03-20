@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Lato&display=swap');
+.content{
+    width: 100%;
+    min-height: 90vh;
+    background-color: rgb(48, 160, 121);
+}
+.author{
+    height: 20vh;
+    text-align: center;
+   
+}
+.author p{
+   position: relative;
+  top: 10%;
+  font-family: 'Cabin', sans-serif;
+font-size: 30px;
+letter-spacing: 5px;
+color: rgb(214, 191, 161);
+
+}
+.box{
+   
+    padding: 20px;
+
+}

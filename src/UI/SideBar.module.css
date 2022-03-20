@@ -1,16 +1,13 @@
 .sidebar {
     height: 80vh;
-    width: 250px;
-    position: fixed;
+    width: 90px;
+    position: absolute;
     top: 20vh;
-    z-index: 100;
-    background-color: #111;
+    
     overflow-x: hidden;
-    transition: 0.5s;
     padding-top: 60px;
     padding-bottom: 100px;
-    border-top-left-radius: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
+   
+  overflow: hidden;
   }
   
