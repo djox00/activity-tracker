@@ -7,10 +7,12 @@ import { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase-config';
 import { getFirestore } from '@firebase/firestore';
-import { collection, addDoc, getDocs, getDoc , orderBy, limit, query, updateDoc,doc, setDoc, on} from '@firebase/firestore';
-
+import { collection, addDoc, getDocs, getDoc , orderBy, limit, query, updateDoc,doc, setDoc,} from '@firebase/firestore';
+import { useEffect } from 'react';
 import { useFirestoreQuery } from '../hooks/firebase-hooks';
 import Day from '../UI/Day';
+import SideBar from '../UI/SideBar';
+
 
 
 const Calendar = () => {
@@ -21,6 +23,7 @@ const Calendar = () => {
     onAuthStateChanged(auth,(currentuser)=>{setUser(currentuser)});
 
 
+
     const db = getFirestore(); 
     const calendarRef = collection(db,"Mart"); 
     const q = query(calendarRef,orderBy("Dan", "asc")); 
@@ -29,7 +32,7 @@ const Calendar = () => {
    
 console.log(days); 
 
-const addmail = async () => {
+/* const addmail = async () => {
 
     days.forEach(element => {
         const docRef = doc(db,"Mart",element.id); 
@@ -41,7 +44,7 @@ const addmail = async () => {
 
 }
 
-addmail(); 
+addmail();  */
 
 
     const removeWorker = async (id) =>{ 
@@ -50,7 +53,7 @@ addmail();
          
          
        const document =  await getDoc(docRef); 
-       console.log(document.data().Radnik_1); 
+      
        if( document.data().Radnik_1!=null && document.data().R1_email == User.email ){
 
         await updateDoc(docRef,{Radnik_1: null}); 
@@ -79,7 +82,7 @@ addmail();
 
 
 
-
+// 
  
 
         }
@@ -98,6 +101,7 @@ if(User!=null){
   return (
 
 <React.Fragment> 
+    <SideBar />
 <div className={styled['calendar-body']} >
 <Container className={styled.days}>
 <Row lg={12} md={6} sm={3} xs={2}>

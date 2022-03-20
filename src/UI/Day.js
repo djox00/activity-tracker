@@ -1,7 +1,7 @@
 import styled from './Day.module.css'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faUserMinus,faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faUser,faUserMinus,faUserPlus, faUserPen } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase-config'
@@ -35,31 +35,34 @@ const Day = ({ day, removeWorker }) => {
 const cardClickHandler = () => { 
     removeWorker(day.id); 
 
+
+
+
+
+     
     send("service_80x83d6","template_ind8yi7",{
-        from_name: User.displayName,
-        worker_name: "DJole",
-        day: "2.",
-        to_email: "djordjedjuric05@gmail.com",
+        worker_name: User.displayName,
+        day: day.Dan + '.',
+        month: "Mart",
+        to_email: User.email != day.R1_email ? day.R1_email + ',' : ''  + User.email != day.R2_email ? day.R2_email + ',' : '' + User.email != day.R3_email ? day.R3_email  : '' ,
+
         });
 }
-    /*  {day.Dan}
-       {day.Radnik_1}
-       {day.Radnik_2}
-       {day.Radnik_3} */
+ 
+      
 
     return (
 
         <div className={styled.card} >
 
-            <div className={styled.header}> {day.Dan}  </div>
+            <div className={styled.header}> {day.Dan}.  </div>
             <ul>
                 <li> <FontAwesomeIcon icon={faUser}/> {day.Radnik_1}  </li>
                 <li><FontAwesomeIcon icon={faUser}/> {day.Radnik_2}   </li>
                 <li> <FontAwesomeIcon icon={faUser}/>{day.Radnik_3}  </li>
 
-
             </ul>
-            <div className={styled['user-action']}> {(day.Radnik_1==null || day.Radnik_2==null || day.Radnik_3==null )?<FontAwesomeIcon className={styled['user-add']} onClick={cardClickHandler} icon={faUserPlus}/> : <FontAwesomeIcon className={styled['user-remove']} onClick={cardClickHandler} icon={faUserMinus}/> }     </div>
+            <div className={styled['user-action']}> <span onClick={cardClickHandler} className={styled['user-label']}> add/remove  </span> <FontAwesomeIcon className={styled['user-toggle']} onClick={cardClickHandler} icon={faUserPen}/>     </div>
             
         </div>
     )
