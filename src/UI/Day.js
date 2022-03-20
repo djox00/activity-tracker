@@ -27,9 +27,9 @@ const cardClickHandler = () => {
     send("service_80x83d6","template_ind8yi7",{
         worker_name: User.displayName,
         day: day.Dan + '.',
-        month: "Mart", // staticki ali ako se radi dalje napravi jos kolekcija npr. jan, feb, mart moze biti dinamicki 
+        month: "Mart", // staticki ali ako se radi dalje napraviti jos kolekcija npr. jan, feb, mart moze biti dinamicki 
         to_email1: mailTosend[0].person,  
-        to_email2: mailTosend[1].person ,  
+        to_email2: mailTosend[1].person ,  // takodjer staticki ali moze se izvesti dinamicki 
         
         });
 
@@ -45,9 +45,9 @@ const cardClickHandler = () => {
 
             <div className={styled.header}> {day.Dan}.  </div>
             <ul>
-                <li> <FontAwesomeIcon icon={faUser}/> {day.Radnik_1}  </li>
-                <li><FontAwesomeIcon icon={faUser}/> {day.Radnik_2}   </li>
-                <li> <FontAwesomeIcon icon={faUser}/>{day.Radnik_3}  </li>
+                <li> <FontAwesomeIcon icon={faUser}/>  {day.Radnik_1}  </li>
+                <li><FontAwesomeIcon icon={faUser}/>  {day.Radnik_2}   </li>
+                <li> <FontAwesomeIcon icon={faUser}/> {day.Radnik_3}  </li>
 
             </ul>
             <div className={styled['user-action']}> <span onClick={cardClickHandler} className={styled['user-label']}> add/remove  </span> <FontAwesomeIcon className={styled['user-toggle']} onClick={cardClickHandler} icon={faUserPen}/>     </div>
