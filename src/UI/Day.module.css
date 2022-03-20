@@ -2,7 +2,7 @@
     width: 200px;
     height: 200px;
     border-radius: 25px;
-    background-color: #FFD700;
+    background-color: #cec6b9;
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.623);
     transition: 0.3s;
     overflow: hidden;
@@ -20,4 +20,25 @@
 .card:hover{
     transform: scale(1.1);
 
+}
+ul{
+    list-style-type:none;
+}
+.user-action{
+    text-align: right;
+    padding: 0 20px;
+    margin-top: 3rem;
+    position: relative;
+}
+.user-add{
+    color: rgba(19, 117, 35, 0.589);
+    transition: 0.3s;
+}
+.user-remove{
+    color: rgba(100, 13, 13, 0.589);
+    transition: 0.3s;
+}
+.user-add:hover,.user-remove:hover{
+cursor: pointer;
+transform: scale(1.2);
 }
